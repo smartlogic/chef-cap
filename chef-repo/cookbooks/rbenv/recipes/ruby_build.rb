@@ -21,14 +21,14 @@
 
 include_recipe "git"
 
-git "#{Chef::Config[:file_cache_path]}/ruby-build" do
+git "/tmp/ruby-build" do
   repository node[:ruby_build][:git_repository]
   reference node[:ruby_build][:git_revision]
   action :sync
 end
 
 bash "install_ruby_build" do
-  cwd "#{Chef::Config[:file_cache_path]}/ruby-build"
+  cwd "/tmp/ruby-build"
   code <<-EOH
     ./install.sh
   EOH

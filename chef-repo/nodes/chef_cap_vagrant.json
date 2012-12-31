@@ -22,12 +22,16 @@
   },
   "rbenv" : {
     "group_users" : [
-      "deploy"
+      "deploy",
+      "vagrant"
     ]
   },
   "monit": {
     "poll_period" : 30,
     "poll_start_delay" : 60
+  },
+  "chef_cap" : {
+
   },
   "run_list": [
     "recipe[build-essential]",
