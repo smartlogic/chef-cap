@@ -40,9 +40,12 @@
     "recipe[openssh]",
     "recipe[sudo]",
     "recipe[postgresql::server]",
+    "recipe[postgresql::ruby]",
     "recipe[users_solo::admins]",
     "recipe[nginx]",
     "recipe[rbenv]",
-    "recipe[monit]"
+    "recipe[rbenv::ruby_build]",
+    "recipe[monit]",
+    "recipe[chef_cap]"
   ]
 }

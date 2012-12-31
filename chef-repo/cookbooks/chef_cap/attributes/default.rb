@@ -1,0 +1,9 @@
+default['chef_cap']['cap_base']          = '/home/deploy/apps'
+default['chef_cap']['deploy_to']         = '/home/deploy/apps/chef_cap'
+default['chef_cap']['environment']       = 'production'
+default['chef_cap']['database']          = 'chef_cap'
+default['chef_cap']['adapter']           = 'postgresql'
+default['chef_cap']['database_user']     = 'postgres'
+default['chef_cap']['database_password'] = (node['postgresql']['password']['postgres'] rescue nil)
+default['chef_cap']['database_host']     = 'localhost'
+default['chef_cap']['ruby_version']      = '1.9.3-p327'
