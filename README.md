@@ -6,7 +6,7 @@
 1. Clone repository
 1. `bundle install`
 1. `vagrant up`
-1. SSH Config
+1. `vagrant ssh-config --host chef_cap_vagrant >> ~/.ssh/config`
 
 # Chef
 

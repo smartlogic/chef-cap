@@ -1,0 +1,38 @@
+{
+  "build-essential" : {
+    "compiletime" : true
+  },
+  "openssh" : {
+    "permit_root_login" : "no",
+    "password_authentication": "no"
+  },
+  "authorization" : {
+    "sudo" : {
+      "groups" : [
+        "admin",
+        "sudo"
+      ],
+      "passwordless" : true
+    }
+  },
+  "postgresql" : {
+    "password" : {
+      "postgres" : "password"
+    }
+  },
+  "rbenv" : {
+    "group_users" : [
+      "deploy"
+    ]
+  },
+  "run_list": [
+    "recipe[build-essential]",
+    "recipe[openssh]",
+    "recipe[sudo]",
+    "recipe[postgresql]",
+    "recipe[users_solo::admins]",
+    "recipe[nginx]",
+    "recipe[rbenv]",
+    "recipe[monit]"
+  ]
+}
