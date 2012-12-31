@@ -1,0 +1,14 @@
+CMD='bash -c'
+which sudo > /dev/null && CMD='sudo bash -c'
+$CMD '
+<%= "export http_proxy=\"#{knife_config[:bootstrap_proxy]}\"" if knife_config[:bootstrap_proxy] -%>
+
+if [ ! -f /usr/bin/chef-client ]; then
+  aptitude update
+  aptitude install -y ruby ruby1.8-dev build-essential wget libruby1.8 rubygems
+fi
+
+gem update --no-rdoc --no-ri
+gem install ohai --no-rdoc --no-ri --verbose
+gem install chef --no-rdoc --no-ri --verbose <%= bootstrap_version_string %>
+'
