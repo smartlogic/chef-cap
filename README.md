@@ -3,7 +3,8 @@
 # Getting Started
 
 1. Install Vagrant
-1. Clone repository
+1. `git clone git@github.com:smartlogic/chef-cap.git`
+1. `cd chef-cap`
 1. `bundle install`
 1. `vagrant up`
 1. `vagrant ssh-config --host chef_cap_vagrant >> ~/.ssh/config`
@@ -26,5 +27,24 @@ Check to see if you can login as the deploy user for the application
 
 # Capistrano
 
+1. `cd ..`
+1. `bundle exec cap chef_cap_vagrant deploy:setup deploy:migrations`
+
 # Proof
 
+1. Open [http://localhost:8080](http://localhost:8080)
+1. See the messages left by Chef and Capistrano
+1. `cd chef-repo`
+1. `bundle exec knife cook vagrant@chef_cap_vagrant`
+1. Refresh [http://localhost:8080](http://localhost:8080)
+1. Observe a new message from the Chef run
+1. `cd ..`
+1. `bundle exec cap chef_cap_vagrant deploy`
+1. Refresh [http://localhost:8080](http://localhost:8080)
+1. Observe a new message from the Capistrano run
+
+# Starting over
+
+1. `vagrant destroy`
+1. `vagrant up`
+1. Back the the Chef section
