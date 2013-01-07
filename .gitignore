@@ -16,3 +16,5 @@
 
 .rvmrc
 .vagrant
+
+/config/database.yml
