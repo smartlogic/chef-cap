@@ -1,8 +1,12 @@
 # Intoduction
 
+This project provides an example of setting up a server with [Chef](http://www.opscode.com/chef/)
+and deploying a [Ruby on Rails](http://rubyonrails.org/) application do it with [Capistrano](https://github.com/capistrano/capistrano)
+
 # Getting Started
 
-1. Install Vagrant
+1. Install [VirtualBox](https://www.virtualbox.org/)
+1. Install [Vagrant](http://www.vagrantup.com/)
 1. `git clone git@github.com:smartlogic/chef-cap.git`
 1. `cd chef-cap`
 1. `bundle install`
@@ -42,9 +46,10 @@ Check to see if you can login as the deploy user for the application
 1. `bundle exec cap chef_cap_vagrant deploy`
 1. Refresh [http://localhost:8080](http://localhost:8080)
 1. Observe a new message from the Capistrano run
+1. Both Chef and Capistrano created and will maintain a singleton entry that is not duplicated by additional runs
 
 # Starting over
 
 1. `vagrant destroy`
 1. `vagrant up`
-1. Back the the Chef section
+1. Back to the Chef section
