@@ -17,7 +17,6 @@ set :scm, :git
 set :repository,  'git@github.com:smartlogic/chef-cap.git'
 set :branch, :master
 set :deploy_via, :remote_cache
-set :deploy_to, '/home/deploy/apps/chef_cap'
 
 set :bundle_flags, '--deployment --quiet --binstubs --shebang ruby-local-exec'
 

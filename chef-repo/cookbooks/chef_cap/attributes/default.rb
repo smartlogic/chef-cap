@@ -1,5 +1,6 @@
-default['chef_cap']['cap_base']          = '/home/deploy/apps'
-default['chef_cap']['deploy_to']         = '/home/deploy/apps/chef_cap'
+default['chef_cap']['web_user']          = 'webapp'
+default['chef_cap']['cap_base']          = "/home/#{node['chef_cap']['web_user']}/apps"
+default['chef_cap']['deploy_to']         = "/home/#{node['chef_cap']['web_user']}/apps/chef_cap"
 default['chef_cap']['environment']       = 'production'
 default['chef_cap']['database']          = 'chef_cap'
 default['chef_cap']['adapter']           = 'postgresql'
