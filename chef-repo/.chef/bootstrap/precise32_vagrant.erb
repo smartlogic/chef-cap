@@ -1,14 +1,6 @@
-CMD='bash -c'
-which sudo > /dev/null && CMD='sudo bash -c'
-$CMD '
-<%= "export http_proxy=\"#{knife_config[:bootstrap_proxy]}\"" if knife_config[:bootstrap_proxy] -%>
-
-if [ ! -f /usr/bin/chef-client ]; then
-  aptitude update
-  aptitude install -y ruby ruby1.8-dev build-essential wget libruby1.8 rubygems
-fi
-
-gem update --no-rdoc --no-ri
-gem install ohai --no-rdoc --no-ri --verbose
-gem install chef --no-rdoc --no-ri --verbose <%= bootstrap_version_string %>
-'
+CMD='bash'
+which sudo > /dev/null && CMD='sudo bash'
+$CMD -c 'apt-get install curl -y'
+curl -L https://www.opscode.com/chef/install.sh > /tmp/chef-install.sh
+chmod +x /tmp/chef-install.sh
+$CMD -c '/tmp/chef-install.sh -v 10.18.0'
