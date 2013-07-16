@@ -1,9 +1,3 @@
-## v2.0.0:
-
-### Bug
-
-- [COOK-2258]: apt: LWRP results in error under why-run mode in apt 1.9.0 cookbook
-
 ## v1.10.0:
 
 ### Improvement
