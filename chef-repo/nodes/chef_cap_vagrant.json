@@ -1,5 +1,5 @@
 {
-  "build-essential" : {
+  "build_essential" : {
     "compiletime" : true
   },
   "openssh" : {
