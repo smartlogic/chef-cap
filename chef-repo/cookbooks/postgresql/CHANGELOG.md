@@ -1,3 +1,51 @@
+## v3.0.2:
+
+### Bug
+
+- [COOK-3076]: postgresql::ruby recipe error when using pgdg
+  repositories
+
+## v3.0.0:
+
+This is a backwards-incompatible release because the Pitti PPA is
+deprecated and the recipe removed, replaced with the PGDG apt
+repository.
+
+### Bug
+
+- [COOK-2571]: Create helper library for pg extension detection
+- [COOK-2797]: Contrib extension contianing '-' fails to load.
+
+### Improvement
+
+- [COOK-2387]: Pitti Postgresql PPA is deprecated
+
+### Task
+
+- [COOK-3022]: update baseboxes in .kitchen.yml
+
+## v2.4.0:
+
+* [COOK-2163] - Dangerous "assign-postgres-password" in "recipes/server.rb" -- Can lock out dbadmin access
+* [COOK-2390] - Recipes to auto-generate many postgresql.conf settings, following "initdb" and "pgtune"
+* [COOK-2435] - Foodcritic fixes for postgresql cookbook
+* [COOK-2476] - Installation into database of any contrib module extensions listed in a node attribute
+
+## v2.2.2:
+
+* [COOK-2232] -Provide PGDG yum repo to install postgresql 9.x on
+  redhat-derived distributions
+
+## v2.2.0:
+
+* [COOK-2230] - Careful about Debian minor version numbers
+* [COOK-2231] - Fix support for postgresql 9.x in server_redhat recipe
+* [COOK-2238] - Postgresql recipe error in password check
+* [COOK-2176] - PostgreSQL cookbook in Solo mode can cause
+  "NoMethodError: undefined method `[]' for nil:NilClass"
+* [COOK-2233] - Provide postgresql::contrib recipe to install useful
+  server administration tools
+
 ## v2.1.0:
 
 * [COOK-1872] - Allow latest PostgreSQL deb packages to be installed
